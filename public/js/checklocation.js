@@ -16,9 +16,9 @@ function checkLocation(point,arr){
   for (let i = 0; i < arr.length - 1; i++) {
       num1+=(calculatePolygonArea([arr[i],arr[i+1],point]))
   }
+  // num1 = parseFloat(num1*Math.pow(10,7).toFixed(4))
   const num2 = calculatePolygonArea(arr)
-  const difference = Math.abs(num1 - num2);
-  if(difference < epsilon){
+  if( Math.round(num1*Math.pow(10,8)) == Math.round(num2*Math.pow(10,8))){
       return true
   }
   return false
